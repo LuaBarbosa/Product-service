@@ -15,6 +15,10 @@ public class ProductController {
 
     private final ProductService service;
 
+    public ProductController(ProductService service) {
+        this.service = service;
+    }
+
     @GetMapping(path = "/products")
         public ResponseEntity<List<ProductDto>> getAllProductLIst(){
 
