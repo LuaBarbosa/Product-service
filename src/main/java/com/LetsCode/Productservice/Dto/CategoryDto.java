@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class CategoryDto {
 
-    private Long Id;
-    private String name;
+
+    private String categoryname;
 }

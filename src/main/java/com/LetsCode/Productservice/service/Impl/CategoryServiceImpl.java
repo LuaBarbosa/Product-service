@@ -1,12 +1,15 @@
 package com.LetsCode.Productservice.service.Impl;
 
 import com.LetsCode.Productservice.Dto.CategoryDto;
+import com.LetsCode.Productservice.domain.model.CategoryEntity;
 import com.LetsCode.Productservice.domain.repository.CategoryRepository;
+import com.LetsCode.Productservice.exception.CategoryNotFoundException;
 import com.LetsCode.Productservice.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -16,7 +19,11 @@ public class CategoryServiceImpl  implements CategoryService {
 
     @Override
     public List<CategoryDto> getAllCategoryList() {
-        return null;
+
+        return repository.findAll()
+                .stream()
+                .map(category -> new CategoryDto(category.getCategoryname()))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -29,5 +36,15 @@ public class CategoryServiceImpl  implements CategoryService {
 
     @Override
     public void newCategory(CategoryDto categoryDto) {
+       CategoryEntity categoryEntity;
+        categoryEntity = new CategoryEntity(categoryDto.getCategoryname());
+        repository.save(categoryEntity);
+    }
+
+   public CategoryEntity findCategoryByName(String categoryname){
+    return repository
+            .findById(categoryname)
+            .orElseThrow(() -> new CategoryNotFoundException("Categoria não encontrada"));
+
     }
 }

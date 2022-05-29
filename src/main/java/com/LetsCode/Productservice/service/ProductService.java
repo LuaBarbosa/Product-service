@@ -7,6 +7,9 @@ import java.util.List;
 public interface ProductService {
     List<ProductDto> getAllProductList();
 
+
+    List<ProductDto> getProductByCategory(String categoryname);
+
     void deleteProductLIst(long productId);
 
     void updateProductList(ProductDto productDto);

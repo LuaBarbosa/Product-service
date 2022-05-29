@@ -28,6 +28,12 @@ public class ProductController {
 
     }
 
+    @GetMapping(path = "/products/{categoryname}")
+    public List<ProductDto> getProductFromCategory(@PathVariable(name = "categoryname") String categoryname){
+
+        return null;
+    }
+
     @DeleteMapping(path = "/products/{products_id}")
     public ResponseEntity<List<ProductDto>> deleteProductLIst(@PathVariable(name = "productId") long productId){
 

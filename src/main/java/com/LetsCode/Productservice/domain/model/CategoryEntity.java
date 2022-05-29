@@ -14,12 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CategoryEntity {
 
-
     @Id //chave da tabela
-    @GeneratedValue
-    private Long id;
-
-    private String name;
-
+    private String categoryname;
 
 }
