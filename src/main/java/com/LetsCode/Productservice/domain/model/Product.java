@@ -23,7 +23,7 @@ public class Product {
     private String description;
 
         //um produto esta em uma unica categoria e na categoria podem ter vários produtos
-        @ManyToOne(fetch = FetchType.LAZY) //quando buscar categoria vai listar todos os produtos da categoria
-        private Category category;
+      //  @ManyToOne(fetch = FetchType.LAZY) //quando buscar categoria vai listar todos os produtos da categoria
+       // private CategoryEntity category;
 
 }

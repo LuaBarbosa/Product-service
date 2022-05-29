@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Category {
+public class CategoryEntity {
 
 
     @Id //chave da tabela
@@ -21,7 +21,5 @@ public class Category {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product")
-    private List<Product> productList;
 
 }

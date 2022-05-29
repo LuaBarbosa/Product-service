@@ -42,8 +42,8 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PostMapping(path = "/products" )
-    public ResponseEntity<List<ProductDto>> postProduct(@RequestBody ProductDto productDto){
+    @PostMapping(path = "/newproducts" )
+    public ResponseEntity<Void> newProduct(@RequestBody ProductDto productDto){
 
         service.newProduct(productDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
