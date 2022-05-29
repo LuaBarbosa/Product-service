@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity //representa entidade de banco de dados
 @Data
@@ -24,5 +22,8 @@ public class Product {
 
     private String description;
 
+        //um produto esta em uma unica categoria e na categoria podem ter vários produtos
+        @ManyToOne(fetch = FetchType.LAZY) //quando buscar categoria vai listar todos os produtos da categoria
+        private Category category;
 
 }
