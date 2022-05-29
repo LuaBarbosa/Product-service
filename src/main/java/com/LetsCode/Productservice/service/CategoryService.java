@@ -4,15 +4,14 @@ import com.LetsCode.Productservice.Dto.CategoryDto;
 
 import java.util.List;
 
-public class CategoryService {
-    public List<CategoryDto> getAllCategoryList;
-
-    public void deleteCategoryLIst(long categoryId) {
+public interface CategoryService {
+    default List<CategoryDto> getAllCategoryList() {
+        return null;
     }
 
-    public void updateCategoryLIst(CategoryDto categoryDto) {
-    }
+    void deleteCategoryLIst(long categoryId);
 
-    public void newCategory(CategoryDto categoryDto) {
-    }
+   void updateCategoryLIst(CategoryDto categoryDto);
+
+   void newCategory(CategoryDto categoryDto);
 }
