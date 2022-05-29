@@ -2,6 +2,7 @@ package com.LetsCode.Productservice.controller;
 
 import com.LetsCode.Productservice.Dto.ProductDto;
 import com.LetsCode.Productservice.service.ProductService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
