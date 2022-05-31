@@ -12,15 +12,16 @@
 
 Tabela de conteúdos
 =================
-<!--ts-->
-   * [Sobre o projeto](#-sobre-o-projeto)
-   * [Funcionalidades](#-funcionalidades)
-   * [Como executar o projeto](#-como-executar-o-projeto)
-   * [Tecnologias](#-tecnologias)
-     
-   * [Autor](#-autor)
-   * [Licença](#user-content--licença)
-<!--te-->
+
+<p align="center">
+ <a href="#sobre-o-projeto">Sobre o projeto</a> •
+ <a href="#roadmap">Funcionalidades</a> • 
+<a href="#executando-o-projeto">Executando</a> •
+ <a href="#tecnologias">Tecnologias</a> • 
+  <a href="#autor">Autor</a>  • 
+ <a href="#licenc-a">Licença</a>
+</p>
+
 
 ## 💻 Sobre o projeto
 
@@ -39,19 +40,43 @@ Este curso foi uma iniciativa da empresa Vitat no programa Quero ser Dev, exclus
   - [x] nome do produto
   - [x] preço, descrição
   - [x] categorias
-  - [x] estoque
+  - [ ] estoque
    
 ---
 
-## 🚀 Como executar o projeto
+## 🚀 Executando o projeto
 
 Trata-se do Back-end (server)
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+
+[Git](https://git-scm.com), [Java](https://www.java.com/pt-BR/). 
+Além disto é bom ter um editor para trabalhar com o código como [Intellij](https://www.jetbrains.com/pt-br/idea/)
 
 ```bash
 
+
+
 # Clone este repositório
-$ git clone 
+$ git clone https://github.com/LuaBarbosa/api-products-service-java-spring-boot
 
+# Acesse a pasta do projeto no terminal/cmd
+$ cd ProductService
 
+# Vá para a pasta server
+$ cd src/main/java
+
+# Execute a aplicação na classe ProductServiceApplication
+$ ProductServiceApplication
+
+# O servidor inciará na porta:8080 - acesse http://localhost:8080 
+```
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+-   **[Java](https://www.java.com/pt-BR/)**
+-   **[Spring](https://spring.io/)**
+-   **[Springboot](https://spring.io/)**
 
 
