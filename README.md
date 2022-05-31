@@ -6,6 +6,9 @@
 <h3 align="center">
    Api Produtos de Papelaria ✏📚 🗃️
 </h3> 
+<h4 align="center">
+	🚧   Em construção 🚧
+</h4>
 
 Tabela de conteúdos
 =================
@@ -29,3 +32,26 @@ Projeto desenvolvido para o fechamento do módulo VI - Java, no curso da [Letsco
 Este curso foi uma iniciativa da empresa Vitat no programa Quero ser Dev, exclusivo para mulheres, com objetivo de qualificar e facilitar o ingresso de mulheres no mercado da programação.
 
 ---
+
+## ⚙️ Funcionalidades
+
+- [x] Empresas ou empreendedores podem se cadastrar na plataforma web enviando:
+  - [x] nome do produto
+  - [x] preço, descrição
+  - [x] categorias
+  - [x] estoque
+   
+---
+
+## 🚀 Como executar o projeto
+
+Trata-se do Back-end (server)
+
+```bash
+
+# Clone este repositório
+$ git clone 
+
+
+
+
