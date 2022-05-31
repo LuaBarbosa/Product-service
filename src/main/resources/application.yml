@@ -12,6 +12,6 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=letscode
     username: postgres
-    password: postgres
+    password: lua2204
     driver-class-name: org.postgresql.Driver
 

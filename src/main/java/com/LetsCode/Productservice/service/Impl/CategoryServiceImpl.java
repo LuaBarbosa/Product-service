@@ -46,8 +46,7 @@ public class CategoryServiceImpl  implements CategoryService {
 
    public CategoryEntity findAllCategoryByName(String categoryname) throws CategoryNotFoundException{
        
-    return repository
-            .findById(categoryname)
+    return repository.findByCategoryname(categoryname)
             .orElseThrow(() -> new CategoryNotFoundException("Categoria não encontrada"));
 
     }
