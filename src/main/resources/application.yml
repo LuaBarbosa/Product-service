@@ -4,14 +4,14 @@ server:
 spring:
   jpa:
     properties:
-      show-sql: true;
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
         ddl-auto: update
+    show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=letscode
     username: postgres
-    password: lua2204
+    password: postgres
     driver-class-name: org.postgresql.Driver
 
