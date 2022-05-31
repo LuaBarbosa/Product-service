@@ -2,7 +2,9 @@ package com.LetsCode.Productservice.service.Impl;
 
 import com.LetsCode.Productservice.Dto.CategoryDto;
 import com.LetsCode.Productservice.domain.model.CategoryEntity;
+import com.LetsCode.Productservice.domain.model.Product;
 import com.LetsCode.Productservice.domain.repository.CategoryRepository;
+import com.LetsCode.Productservice.domain.repository.ProductRepository;
 import com.LetsCode.Productservice.exception.CategoryNotFoundException;
 import com.LetsCode.Productservice.service.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -17,12 +19,13 @@ public class CategoryServiceImpl  implements CategoryService {
 
     final CategoryRepository repository;
 
+
     @Override
     public List<CategoryDto> getAllCategoryList() {
 
         return repository.findAll()
                 .stream()
-                .map(category -> new CategoryDto(category.getCategoryname()))
+                .map(category -> new CategoryDto(category.getCategoryname(), category.getId()))
                 .collect(Collectors.toList());
     }
 
@@ -37,13 +40,14 @@ public class CategoryServiceImpl  implements CategoryService {
     @Override
     public void newCategory(CategoryDto categoryDto) {
        CategoryEntity categoryEntity;
-        categoryEntity = new CategoryEntity(categoryDto.getCategoryname());
+        categoryEntity = new CategoryEntity(categoryDto.getCategoryname(), categoryDto.getId());
         repository.save(categoryEntity);
     }
 
-   public CategoryEntity findCategoryByName(String categoryname){
+   public CategoryEntity findAllCategoryByName(String categoryname) throws CategoryNotFoundException{
+       
     return repository
-            .findById(categoryname)
+            .findByCategoryname(categoryname)
             .orElseThrow(() -> new CategoryNotFoundException("Categoria não encontrada"));
 
     }

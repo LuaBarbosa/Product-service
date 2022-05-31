@@ -1,8 +1,10 @@
 package com.LetsCode.Productservice.domain.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -10,20 +12,21 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Product {
 
     @Id //chave da tabela
-    @GeneratedValue //preenche automatico
+    @GeneratedValue
     private Long id;
 
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private CategoryEntity categoryname;
 
     private int price;
 
     private String description;
 
-        //um produto esta em uma unica categoria e na categoria podem ter vários produtos
-      //  @ManyToOne(fetch = FetchType.LAZY) //quando buscar categoria vai listar todos os produtos da categoria
-       // private CategoryEntity category;
 
-}
+  }

@@ -2,6 +2,7 @@ package com.LetsCode.Productservice.service;
 
 import com.LetsCode.Productservice.Dto.CategoryDto;
 import com.LetsCode.Productservice.domain.model.CategoryEntity;
+import com.LetsCode.Productservice.exception.CategoryNotFoundException;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ public interface CategoryService {
    void newCategory(CategoryDto categoryDto);
 
 
-    CategoryEntity findCategoryByName(String categoryname);
+    CategoryEntity findAllCategoryByName(String categoryname) throws CategoryNotFoundException;
 }

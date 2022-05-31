@@ -15,6 +15,9 @@ import java.util.List;
 public class CategoryEntity {
 
     @Id //chave da tabela
+   //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String categoryname;
+
+    private Long id;
 
 }
