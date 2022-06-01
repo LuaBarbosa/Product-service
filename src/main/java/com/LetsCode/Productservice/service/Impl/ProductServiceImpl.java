@@ -59,6 +59,7 @@ public class ProductServiceImpl  implements ProductService {
     public void updateProductList(ProductDto productDto) {
         final CategoryEntity categoryEntity = categoryService.findByCategoryname(productDto.getCategoryname());
         final Product product = Product.builder()
+                .id(productDto.getId())
                 .name(productDto.getName())
                 .categoryname(categoryEntity)
                 .price(productDto.getPrice())

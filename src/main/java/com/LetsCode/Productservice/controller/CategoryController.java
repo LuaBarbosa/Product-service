@@ -31,7 +31,7 @@ public class CategoryController {
 
 
     @DeleteMapping(path = "/category/{id}")
-    public ResponseEntity<List<CategoryDto>> deleteCategoryLIst(@PathVariable(name = "id") long id){
+    public ResponseEntity<List<CategoryDto>> deleteCategory(@PathVariable(name = "id") long id){
 
         service.deleteCategory(id);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
