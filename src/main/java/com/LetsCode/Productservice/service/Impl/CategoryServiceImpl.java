@@ -30,23 +30,22 @@ public class CategoryServiceImpl  implements CategoryService {
     }
 
     @Override
-    public void deleteCategoryLIst(long categoryId) {
-    }
+    public void deleteCategory(long id) {
+       // CategoryEntity delete = repository.getById(id);
+       // repository.delete(delete);
 
-    @Override
-    public void updateCategoryLIst(CategoryDto categoryDto) {
     }
 
     @Override
     public void newCategory(CategoryDto categoryDto) {
        CategoryEntity categoryEntity;
-        categoryEntity = new CategoryEntity(categoryDto.getCategoryname(), categoryDto.getId());
+        categoryEntity = new CategoryEntity(categoryDto.getId(), categoryDto.getCategoryname());
         repository.save(categoryEntity);
     }
 
-   public CategoryEntity findAllCategoryByName(String categoryname) throws CategoryNotFoundException{
-       
-    return repository.findByCategoryname(categoryname)
+   public CategoryEntity findByCategoryname(String categoryname) throws CategoryNotFoundException{
+           return repository
+            .findByCategoryname(categoryname)
             .orElseThrow(() -> new CategoryNotFoundException("Categoria não encontrada"));
 
     }

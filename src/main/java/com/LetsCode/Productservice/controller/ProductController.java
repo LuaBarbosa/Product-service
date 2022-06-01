@@ -30,11 +30,11 @@ public class ProductController {
             return ResponseEntity.ok(productListByCategory);
     }
 
-    @DeleteMapping(path = "/products/{products_id}")
-    public ResponseEntity<List<ProductDto>> deleteProductLIst(@PathVariable(name = "productId") long productId)
+    @DeleteMapping(path = "/products/{id}")
+    public ResponseEntity<List<ProductDto>> deleteProductLIst(@PathVariable(name = "id") long id)
             throws ProducNotFoundException {
 
-        service.deleteProductLIst(productId);
+        service.deleteProductLIst(id);
         return ResponseEntity.noContent().build();
 
     }

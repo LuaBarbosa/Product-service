@@ -27,7 +27,7 @@ public class ProductServiceImpl  implements ProductService {
 
      @Override
     public List<ProductDto> getProductByCategory(String categoryname) throws CategoryNotFoundException {
-           final CategoryEntity categoryEntity = categoryService.findAllCategoryByName(categoryname);
+           final CategoryEntity categoryEntity = categoryService.findByCategoryname(categoryname);
            return repository
                .findByCategoryname(categoryEntity)
                .stream()
@@ -57,12 +57,20 @@ public class ProductServiceImpl  implements ProductService {
 
     @Override
     public void updateProductList(ProductDto productDto) {
-
+        final CategoryEntity categoryEntity = categoryService.findByCategoryname(productDto.getCategoryname());
+        final Product product = Product.builder()
+                .name(productDto.getName())
+                .categoryname(categoryEntity)
+                .price(productDto.getPrice())
+                .description(productDto.getDescription())
+                .build();
+        repository.save(product);
     }
+
 
     @Override
     public void newProduct(final ProductDto productDto) throws CategoryNotFoundException {
-        final CategoryEntity categoryEntity = categoryService.findAllCategoryByName(productDto.getCategoryname());
+        final CategoryEntity categoryEntity = categoryService.findByCategoryname(productDto.getCategoryname());
        final Product product = Product.builder()
                .name(productDto.getName())
                .categoryname(categoryEntity)

@@ -7,16 +7,14 @@ import com.LetsCode.Productservice.exception.CategoryNotFoundException;
 import java.util.List;
 
 public interface CategoryService {
+
     default List<CategoryDto> getAllCategoryList() {
         return null;
     }
 
-    void deleteCategoryLIst(long categoryId);
-
-   void updateCategoryLIst(CategoryDto categoryDto);
-
    void newCategory(CategoryDto categoryDto);
 
+    CategoryEntity findByCategoryname(String categoryname) throws CategoryNotFoundException;
 
-    CategoryEntity findAllCategoryByName(String categoryname) throws CategoryNotFoundException;
+    void deleteCategory(long id);
 }

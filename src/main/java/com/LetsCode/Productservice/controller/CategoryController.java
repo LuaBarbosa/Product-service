@@ -30,19 +30,13 @@ public class CategoryController {
     }
 
 
-    @DeleteMapping(path = "/category/{category_id}")
-    public ResponseEntity<List<CategoryDto>> deleteCategoryLIst(@PathVariable(name = "categoryId") long categoryId){
+    @DeleteMapping(path = "/category/{id}")
+    public ResponseEntity<List<CategoryDto>> deleteCategoryLIst(@PathVariable(name = "id") long id){
 
-        service.deleteCategoryLIst(categoryId);
+        service.deleteCategory(id);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping(path = "/category")
-    public ResponseEntity<List<CategoryDto>> updateCategoryLIst(@RequestBody CategoryDto categoryDto){
-
-        service.updateCategoryLIst(categoryDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
 
     @PostMapping(path = "/category" )
     public ResponseEntity<List<CategoryDto>> postCategory(@RequestBody CategoryDto categoryDto){
